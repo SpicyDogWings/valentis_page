@@ -12,10 +12,17 @@
   </body>
 </html>
 
-<style>
+<style is:global>
+  @import "/public/css/new-title.css";
+  @import "/public/css/satoshi.css";
+  :root {
+    --bg: #493d9e;
+    --fr: #dad2ff;
+    --accent: #b2a5ff;
+    --complementary: #fff2af;
+  }
   html,
   body {
-    margin: 0;
     width: 100%;
     height: 100%;
   }
@@ -23,5 +30,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Satoshi-Light", sans-serif;
   }
 </style>
