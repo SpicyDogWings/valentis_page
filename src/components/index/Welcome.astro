@@ -1,16 +1,18 @@
 ---
-
+import { Image } from "astro:assets";
 ---
 
 <div class="header">
   <h1>Loviu</h1>
   <p>¿Quieres ser mi valentina?</p>
-  <img
+  <Image
     src="/img/heart_export.webp"
     alt="Una imagen de un corazón pixelart morado"
+    width="50"
+    height="50"
   />
 </div>
-<button>Sí</button>
+<a href="/confirm">Sí</a>
 
 <style scoped>
   .header {
@@ -41,7 +43,6 @@
     }
 
     img {
-      width: 10%;
       position: absolute;
       transform: scale(6) translateY(-2rem) rotate(30deg);
       animation-name: example;
@@ -50,7 +51,7 @@
     }
   }
 
-  button {
+  a {
     font-family: "Satoshi-Bold", serif;
     margin-top: 1rem;
     padding: 0.5rem 4rem;
@@ -60,17 +61,29 @@
     border: 0.2rem solid var(--fr);
     border-radius: 1.5rem;
     box-shadow: 0.5rem 0.5rem 0 var(--fr);
+    text-decoration: none;
+    transition: all;
+    transition-duration: 150ms;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.95);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
   @keyframes example {
     0% {
-      transform: scale(6) rotate(30deg);
-    }
-    50% {
       transform: scale(4) rotate(30deg);
     }
+    50% {
+      transform: scale(3) rotate(30deg);
+    }
     100% {
-      transform: scale(6) rotate(30deg);
+      transform: scale(4) rotate(30deg);
     }
   }
 </style>
