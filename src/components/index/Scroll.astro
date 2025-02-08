@@ -1,0 +1,32 @@
+<div class="scroll">
+  <p>La opción "no" se encuentra hasta abajo</p>
+  {Array.from({ length: 50 }).map((_, i) => <p key={i}>Más abajo</p>)}
+  <p>Ups, se me olvidó colocar el botón no :D</p>
+</div>
+<style scoped>
+  .scroll {
+    scrollbar-width: 0;
+    margin: 5rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 50rem;
+
+    p {
+      width: 100%;
+      text-align: start;
+    }
+
+    p:nth-child(n + 2) {
+      font-family: "Satoshi-Bold", sans-serif;
+      font-size: 3rem;
+      color: var(--fr);
+    }
+
+    p:last-child {
+      font-family: "Satoshi-Black", sans-serif;
+    }
+  }
+</style>
